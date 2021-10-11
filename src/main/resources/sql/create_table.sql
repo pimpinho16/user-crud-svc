@@ -5,7 +5,7 @@
 -- Dumped from database version 13.1
 -- Dumped by pg_dump version 13.1
 
--- Started on 2021-10-10 20:51:31
+-- Started on 2021-10-11 00:01:15
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -39,9 +39,9 @@ SET default_table_access_method = heap;
 
 CREATE TABLE "user".svc_usr_user (
     "usrAge" integer NOT NULL,
-    "usrFirstName" character varying(100)[] NOT NULL,
+    "usrFirstName" character varying(100) NOT NULL,
     "usrId" integer NOT NULL,
-    "usrLastName" character varying(100)[] NOT NULL,
+    "usrLastName" character varying(100) NOT NULL,
     "usrCreateDate" time with time zone NOT NULL
 );
 
@@ -65,7 +65,7 @@ CREATE SEQUENCE "user"."svc_usr_user_usrId_seq"
 ALTER TABLE "user"."svc_usr_user_usrId_seq" OWNER TO postgres;
 
 --
--- TOC entry 2992 (class 0 OID 0)
+-- TOC entry 2991 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: svc_usr_user_usrId_seq; Type: SEQUENCE OWNED BY; Schema: user; Owner: postgres
 --
@@ -74,7 +74,7 @@ ALTER SEQUENCE "user"."svc_usr_user_usrId_seq" OWNED BY "user".svc_usr_user."usr
 
 
 --
--- TOC entry 2852 (class 2604 OID 16414)
+-- TOC entry 2851 (class 2604 OID 16414)
 -- Name: svc_usr_user usrId; Type: DEFAULT; Schema: user; Owner: postgres
 --
 
@@ -82,26 +82,27 @@ ALTER TABLE ONLY "user".svc_usr_user ALTER COLUMN "usrId" SET DEFAULT nextval('"
 
 
 --
--- TOC entry 2986 (class 0 OID 16411)
+-- TOC entry 2985 (class 0 OID 16411)
 -- Dependencies: 202
 -- Data for Name: svc_usr_user; Type: TABLE DATA; Schema: user; Owner: postgres
 --
 
 COPY "user".svc_usr_user ("usrAge", "usrFirstName", "usrId", "usrLastName", "usrCreateDate") FROM stdin;
+20	Alexander	1	Andrade	23:59:04.307371-06
 \.
 
 
 --
--- TOC entry 2993 (class 0 OID 0)
+-- TOC entry 2992 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: svc_usr_user_usrId_seq; Type: SEQUENCE SET; Schema: user; Owner: postgres
 --
 
-SELECT pg_catalog.setval('"user"."svc_usr_user_usrId_seq"', 1, false);
+SELECT pg_catalog.setval('"user"."svc_usr_user_usrId_seq"', 1, true);
 
 
 --
--- TOC entry 2854 (class 2606 OID 16419)
+-- TOC entry 2853 (class 2606 OID 16419)
 -- Name: svc_usr_user svc_usr_user_pkey; Type: CONSTRAINT; Schema: user; Owner: postgres
 --
 
@@ -109,7 +110,7 @@ ALTER TABLE ONLY "user".svc_usr_user
     ADD CONSTRAINT svc_usr_user_pkey PRIMARY KEY ("usrId");
 
 
--- Completed on 2021-10-10 20:51:31
+-- Completed on 2021-10-11 00:01:15
 
 --
 -- PostgreSQL database dump complete

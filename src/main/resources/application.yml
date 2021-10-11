@@ -1,0 +1,30 @@
+server:
+  port: 1999
+  
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Services?currentSchema=user
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false  
+   
+  
+    
+config:
+  endpoints:
+    user:
+      data: UserDataBase
+      list:
+        url: /getUsers
+    
+management:
+  endpoints:
+    web:
+      base-path: /
+      
+    
