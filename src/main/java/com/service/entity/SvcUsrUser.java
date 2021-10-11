@@ -19,6 +19,7 @@ public class SvcUsrUser implements java.io.Serializable{
 	private String usrLastName;
 	private Integer usrAge;
 	private Date usrCreateDate;
+	
 	@Column(name="usrId")
 	public Integer getUsrId() {
 		return usrId;
